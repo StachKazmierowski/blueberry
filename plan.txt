@@ -1,0 +1,19 @@
+
+Game{
+private:
+	MixedStrategy row_optimal_strategy;
+	MixedStrategy col_optimal_strategy;
+
+	LP_Solver solver;
+public:
+	void update_optimal_strategies(Pure_strategy new_row_strategy, Pure_strategy new_col_strategy);
+	// ta metoda będzie brała strategii czystych z obydwu optymalnych strategii, powiękaszała je o nowe strategie,
+	// wyznaczała macież wypłat, obliczała jej równowagi i zapisywała wyniki do row/col_optimal_strategy
+}
+
+
+
+StrategySet {
+private:
+	vector<PureStrategy> pure_strategies;
+}

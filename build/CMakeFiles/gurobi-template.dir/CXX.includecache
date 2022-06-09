@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/stach/grant/double_oracle_algorithm/main.cpp
+gurobi_c++.h
+/home/stach/grant/double_oracle_algorithm/gurobi_c++.h
+
+/opt/gurobi951/linux64/include/gurobi_c++.h
+iostream
+-
+vector
+-
+string
+-
+gurobi_c.h
+/opt/gurobi951/linux64/include/gurobi_c.h
+
+/opt/gurobi951/linux64/include/gurobi_c.h
+stdio.h
+-
+

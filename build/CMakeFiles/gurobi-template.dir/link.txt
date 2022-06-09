@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/gurobi-template.dir/main.cpp.o  -o gurobi-template   -L/opt/anaconda3/lib  -Wl,-rpath,/opt/anaconda3/lib /opt/gurobi951/linux64/lib/libgurobi_c++.a -lgurobi95 
