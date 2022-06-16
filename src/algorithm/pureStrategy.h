@@ -30,6 +30,10 @@ public:
     double payoff(PureStrategy strategy){
         return symmetrized_payoff_chopstick(this->division, strategy.division);
     }
+
+    int max_assignment(){
+        return this->division.at(0);
+    }
 };
 
 

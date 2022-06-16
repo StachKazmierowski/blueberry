@@ -58,11 +58,15 @@ public:
     }
 
     PureStrategy best_row_response(){
-        return Oracle::find_best_response(this->col_optimal_strategy, first_division(A, n));
+        return Oracle::find_best_response(this->col_optimal_strategy, first_response(this->A, this->n, this->col_optimal_strategy.max_assignment()));
     }
 
     PureStrategy best_col_response(){
-        return Oracle::find_best_response(this->row_optimal_strategy, first_division(B, n));
+        return Oracle::find_best_response(this->row_optimal_strategy, first_response(this->B, this->n, this->row_optimal_strategy.max_assignment()));
+    }
+
+    int max_row_value(){
+        return this->row_optimal_strategy.max_assignment();
     }
 };
 

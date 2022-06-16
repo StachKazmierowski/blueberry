@@ -8,6 +8,7 @@
 #include <cassert>
 #include "pureStrategy.h"
 #include <cassert>
+#include <omp.h>
 
 class MixedStrategy {
 protected:
@@ -34,7 +35,8 @@ public:
 
     double payoff(PureStrategy opponentStrategy){
         double result = 0.0;
-        for(int i = 0 ; i < this->strategies.size(); i++){
+        int i;
+        for(i = 0; i < this->strategies.size(); i++){
             result += this->probabilities.at(i) * this->strategies.at(i).payoff(opponentStrategy);
         }
         return result;
@@ -50,6 +52,16 @@ public:
                 return true;
         }
         return false;
+    }
+
+    int max_assignment(){
+        int max = 0;
+        for (int i = 0 ; i < this->strategies.size(); i++){
+            if( this->strategies.at(i).max_assignment() > max and this->probabilities.at(i) > 0 ){
+                max = this->strategies.at(i).max_assignment();
+            }
+        }
+        return max;
     }
 };
 

@@ -26,4 +26,5 @@ public:
 };
 
 
+
 #endif //DOUBLEORACLEALGORITHM_ORACLE_H
