@@ -5,7 +5,7 @@
 #ifndef DOUBLEORACLEALGORITHM_GAME_H
 #define DOUBLEORACLEALGORITHM_GAME_H
 #include "mixedStrategy.h"
-#include "utils.h"
+#include "utils/utils.h"
 #include "lp-solver/lp-solver.h"
 #include "oracle.h"
 

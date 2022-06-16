@@ -5,7 +5,8 @@
 #define GUROBI_TEMPLATE_PURESTRATEGY_H
 #include<vector>
 #include "chopstick/chopstick.h"
-#include "utils.h"
+#include "utils/utils.h"
+#include "utils/symmetrized.h"
 
 class PureStrategy {
 protected:

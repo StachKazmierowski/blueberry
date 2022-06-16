@@ -6,7 +6,7 @@
 #define DOUBLEORACLEALGORITHM_ORACLE_H
 #include "mixedStrategy.h"
 #include "pureStrategy.h"
-#include "utils.h"
+#include "utils/utils.h"
 
 class Oracle {
 public:
