@@ -51,6 +51,16 @@ public:
         }
         return false;
     }
+
+    int support_size(){
+        int size = 0;
+        for(double probability : probabilities){
+            if(probability > 0.0){
+                size++;
+            }
+        }
+        return size;
+    }
 };
 
 

@@ -64,6 +64,10 @@ public:
     PureStrategy best_col_response(){
         return Oracle::find_best_response(this->row_optimal_strategy, first_division(B, n));
     }
+
+    int get_row_support_size(){
+        return this->row_optimal_strategy.support_size();
+    }
 };
 
 

@@ -5,6 +5,7 @@
 #include "src/algorithm/game.h"
 #include "src/algorithm/oracle.h"
 #include "src/algorithm/algorithm.h"
+#include "src/experiment.h"
 using namespace std;
 
 int main(int argc, char **argv){
@@ -19,11 +20,6 @@ int main(int argc, char **argv){
     auto B = (int) strtol(argv[2], nullptr, 10);
     auto n = (int) strtol(argv[3], nullptr, 10);
 
-    auto start = chrono::steady_clock::now();
-    Game g = algorithm(A, B, n);
-    auto end = chrono::steady_clock::now();
-    cout << "Elapsed time in milliseconds: "
-         << chrono::duration_cast<chrono::milliseconds>(end - start).count()
-         << " ms" << endl;
+    run_experiment(A ,B, n);
     return 0;
 }
