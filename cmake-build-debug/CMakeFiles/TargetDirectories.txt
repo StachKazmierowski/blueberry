@@ -1,3 +1,0 @@
-/home/stach/grant/double_oracle_algorithm/cmake-build-debug/CMakeFiles/doubleOracleAlgorithm.dir
-/home/stach/grant/double_oracle_algorithm/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/stach/grant/double_oracle_algorithm/cmake-build-debug/CMakeFiles/rebuild_cache.dir

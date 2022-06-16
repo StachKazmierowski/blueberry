@@ -1,3 +1,0 @@
-/home/stach/grant/double_oracle_algorithm/build/CMakeFiles/rebuild_cache.dir
-/home/stach/grant/double_oracle_algorithm/build/CMakeFiles/edit_cache.dir
-/home/stach/grant/double_oracle_algorithm/build/CMakeFiles/gurobi-template.dir
