@@ -5,6 +5,7 @@
 #include "symmetrized.h"
 #include<numeric>
 #include <algorithm>
+#include "utils.h"
 
 std::vector<int> starting_division(int A, int n){
     int rest = A - n * (A/n);

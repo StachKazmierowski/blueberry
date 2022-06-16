@@ -8,7 +8,9 @@
 
 
 
-
+std::vector<int> remove_first(std::vector<int> partition){
+    return std::vector<int>(partition.end() - partition.size() + 1 , partition.end());
+}
 
 std::vector<std::vector<double>> transpose(std::vector<std::vector<double>> A) {
     double rows = A.size();

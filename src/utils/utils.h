@@ -8,4 +8,6 @@
 
 std::vector<std::vector<double>> transpose(std::vector<std::vector<double>> A);
 
+std::vector<int> remove_first(std::vector<int> partition);
+
 #endif //GUROBI_TEMPLATE_UTILS_H
