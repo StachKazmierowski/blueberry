@@ -8,10 +8,10 @@ int sign(int a){
     return -1;
 }
 
-vector<vector<long int>> empty_matrix(int size){
-    vector<vector<long int>> values;
+vector<vector<long long>> empty_matrix(int size){
+    vector<vector<long long>> values;
     for(int i = 0 ; i < size; i++){
-        vector<long int> row;
+        vector<long long> row;
         for(int j = 0; j < size; j++){
             row.push_back(0);
         }
@@ -125,8 +125,8 @@ vector<vector<int>> all_permutations(vector<int> s_A){
     return result;
 }
 
-long int k_W(vector<int> s_A, vector<int> s_B){
-    long int k_W = 0;
+long long k_W(vector<int> s_A, vector<int> s_B){
+    long long k_W = 0;
     for (int i = 0; i < s_A.size(); i++){
         if(s_A.at(i) > s_B.at(i))
             k_W++;
@@ -134,8 +134,8 @@ long int k_W(vector<int> s_A, vector<int> s_B){
     return k_W;
 }
 
-long int k_L(vector<int> s_A, vector<int> s_B){
-    long int k_L = 0;
+long long k_L(vector<int> s_A, vector<int> s_B){
+    long long k_L = 0;
     for (int i = 0; i < s_A.size(); i++){
         if(s_A.at(i) < s_B.at(i))
             k_L++;
@@ -143,7 +143,7 @@ long int k_L(vector<int> s_A, vector<int> s_B){
     return k_L;
 }
 
-long int factorial(int n){
+long long factorial(int n){
     if(n < 0)
         return 0;
     if(n == 0 || n == 1)
@@ -151,8 +151,8 @@ long int factorial(int n){
     return n* factorial(n-1);
 }
 
-long int matrix_sum(vector<vector<long int>> matrix){
-    long int sum = 0;
+long long matrix_sum(vector<vector<long long>> matrix){
+    long long sum = 0;
     for(int i = 0; i < matrix.size(); i++){
         for(int j = 0; j < matrix.at(0).size(); j++){
             sum += matrix.at(i).at(j);
@@ -161,19 +161,19 @@ long int matrix_sum(vector<vector<long int>> matrix){
     return sum;
 }
 
-vector<vector<long int>> h(vector<int> s_A, vector<int> s_B){
+vector<vector<long long>> h(vector<int> s_A, vector<int> s_B){
     int fields_number = s_A.size();
-    vector<vector<long int>> values;
+    vector<vector<long long>> values;
     values = empty_matrix(fields_number + 1);
     vector<vector<int>> permutations;
     permutations = all_permutations(s_A);
     for (int i = 0; i < permutations.size(); i++){
         vector<int> permutation = permutations.at(i);
-        long int kW = k_W(permutation, s_B);
-        long int kL = k_L(permutation, s_B);
+        long long kW = k_W(permutation, s_B);
+        long long kL = k_L(permutation, s_B);
         values.at(kW).at(kL)++;
     }
-    long int scale = (long int)(factorial(fields_number) / matrix_sum(values));
+    long long scale = (long long)(factorial(fields_number) / matrix_sum(values));
     for(int i = 0; i < values.size(); i++){
         for(int j = 0; j < values.at(0).size(); j++){
             values.at(i).at(j) *= scale;
@@ -296,13 +296,13 @@ vector<vector<int>> find_knots(vector<int> L, vector<int> T){ //TODO następny k
     return knots;
 }
 
-long int newton_symbol(int n, int k){
+long long newton_symbol(int n, int k){
     if(n < 0 || k < 0 || k > n)
         return 0;
     return int(factorial(n) / (factorial(n - k) * factorial(k)));
 }
 
-long int single_type_rectangle(int cols_num, int rows_num, int rooks_num){
+long long single_type_rectangle(int cols_num, int rows_num, int rooks_num){
     if(cols_num < 0 or rows_num < 0 or rooks_num < 0)
         return 0;
     if(rooks_num > cols_num or rooks_num > rows_num)

@@ -3,7 +3,7 @@
 #include "chop_utils.h"
 #include <tuple>
 
-vector<long int> recurrence_H_chopstick(vector<int> s_A, vector<int> s_B);
+vector<long long> recurrence_H_chopstick(vector<int> s_A, vector<int> s_B);
 
 double symmetrized_payoff_chopstick(vector<int> s_A, vector<int> s_B);
 
