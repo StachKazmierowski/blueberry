@@ -16,6 +16,7 @@ protected:
 public:
     MixedStrategy(std::vector<PureStrategy> pureStrategies, std::vector<double> probs){
         assert(pureStrategies.size() == probs.size());
+        assert_probabilities(probs);
         this->strategies = pureStrategies;
         this->probabilities = probs;
     }
@@ -24,11 +25,21 @@ public:
         return this->strategies;
     }
 
+    vector<double> get_probabilities(){
+        return this->probabilities;
+    }
+
+    int get_size(){
+        return this->strategies.size();
+    }
+
     void append_strategy(PureStrategy p){
         this->strategies.push_back(p);
     }
 
     void set_probabilities(vector<double> probs){
+        assert_probabilities(probs);
+        assert(probs.size() == this->strategies.size());
         this->probabilities = probs;
     }
 
@@ -61,6 +72,17 @@ public:
         }
         return size;
     }
+
+    int get_max_value(){
+        int max_value = 0;
+        for (int i = 0 ; i < this->get_size(); i++){
+            if(this->probabilities.at(i) > 0 and max_value < this->strategies.at(i).get_division().at(0)){
+                max_value = this->strategies.at(i).get_division().at(0);
+            }
+        }
+        return max_value;
+    }
+
 };
 
 

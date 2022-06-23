@@ -6,6 +6,7 @@
 #include<vector>
 #include<numeric>
 #include <algorithm>
+#include <assert.h>
 
 bool is_last_division(std::vector<int> division){
     if(division.size() <= 1){
@@ -81,3 +82,11 @@ std::vector<std::vector<double>> transpose(std::vector<std::vector<double>> A) {
     return r;
 }
 
+void assert_probabilities(std::vector<double> probabilities){
+    double sum = 0;
+    for(double element : probabilities){
+        assert(element >= 0);
+        sum += element;
+    }
+    assert(0.99999 < sum and sum < 1.00001);
+}

@@ -4,6 +4,8 @@
 #include "lp-solver.h"
 #include "gurobi_c++.h"
 #include "string"
+#include <assert.h>
+#include "utils.h"
 
 static double MAX_VALUE = 1;
 static double MIN_VALUE = -1;
@@ -52,6 +54,7 @@ std::vector<double> solve_game(std::vector<std::vector<double>> payoff_matrix){
         for (GRBVar var : variables){
             col_optimal_strategy.push_back(var.get(GRB_DoubleAttr_X));
         }
+        assert_probabilities(col_optimal_strategy);
         return col_optimal_strategy;
     } catch(GRBException e) {
         std::cout << "Error code = " << e.getErrorCode() << std::endl;

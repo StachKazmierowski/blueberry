@@ -18,4 +18,6 @@ std::vector<int> first_division(int A, int n);
 
 std::vector<std::vector<double>> transpose(std::vector<std::vector<double>> A);
 
+void assert_probabilities(std::vector<double> probabilities);
+
 #endif //GUROBI_TEMPLATE_UTILS_H

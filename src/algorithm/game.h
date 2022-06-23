@@ -8,6 +8,7 @@
 #include "utils.h"
 #include "lp-solver/lp-solver.h"
 #include "oracle.h"
+#include <assert.h>
 
 class Game {
 protected:
@@ -45,6 +46,18 @@ public:
         return payoff_matrix;
     }
 
+    int get_A(){
+        return this->A;
+    }
+
+    int get_B(){
+        return this->B;
+    }
+
+    int get_n(){
+        return this->n;
+    }
+
     std::vector<std::vector<double>> col_player_payoff_matrix(){
         return transpose(row_player_payoff_matrix());
     }
@@ -67,6 +80,14 @@ public:
 
     int get_row_support_size(){
         return this->row_optimal_strategy.support_size();
+    }
+
+    MixedStrategy get_row_strategy(){
+        return this->row_optimal_strategy;
+    }
+
+    MixedStrategy get_col_strategy(){
+        return this->col_optimal_strategy;
     }
 };
 

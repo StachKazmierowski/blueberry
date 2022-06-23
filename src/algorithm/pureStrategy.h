@@ -23,6 +23,10 @@ public:
         this->division = div;
     }
 
+    vector<int> get_division(){
+        return this->division;
+    }
+
     PureStrategy next_strategy(){
         return PureStrategy(next_division(this->division));
     }
