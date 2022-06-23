@@ -71,11 +71,13 @@ public:
     }
 
     PureStrategy best_row_response(){
-        return Oracle::find_best_response(this->col_optimal_strategy, first_division(A, n));
+        return Oracle::find_best_response(this->col_optimal_strategy,
+                                          first_lex_division(A, n, this->col_optimal_strategy.get_max_value() + 1));
     }
 
     PureStrategy best_col_response(){
-        return Oracle::find_best_response(this->row_optimal_strategy, first_division(B, n));
+        return Oracle::find_best_response(this->row_optimal_strategy,
+                                          first_lex_division(B, n, this->row_optimal_strategy.get_max_value() + 1));
     }
 
     int get_row_support_size(){

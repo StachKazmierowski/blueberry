@@ -63,6 +63,17 @@ std::vector<int> starting_division(int A, int n){
     return division;
 }
 
+std::vector<int> first_lex_division(int A, int n, int max_value){
+    std::vector<int> division = std::vector<int>(n, 0);
+    int i = 0;
+    while (A > 0) {
+        division.at(i) = std::min(max_value, A);
+        A -= division.at(i);
+        i++;
+    }
+    return division;
+}
+
 std::vector<int> first_division(int A, int n){
     std::vector<int> division = std::vector<int>(n, 0);
     division.at(0) = A;

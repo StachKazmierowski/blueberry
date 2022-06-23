@@ -20,4 +20,6 @@ std::vector<std::vector<double>> transpose(std::vector<std::vector<double>> A);
 
 void assert_probabilities(std::vector<double> probabilities);
 
+std::vector<int> first_lex_division(int A, int n, int max_value);
+
 #endif //GUROBI_TEMPLATE_UTILS_H
